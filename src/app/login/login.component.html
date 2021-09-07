@@ -1,7 +1,7 @@
 
 <p>login works!</p>
-<p>user: {{user.email}}</p>
-<p>password: {{user.password}}</p>
+<p>user: {{user1.email}}</p>
+<p>{{name}}</p>
 <a href="/account">account</a>
 
 
@@ -12,6 +12,12 @@
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <form>
+
+            <div class="form-outline mb-3">
+              <input type="text" name="user" [(ngModel)]="user.name"
+                placeholder="Enter a name" />
+              <label>Username</label>
+            </div>
   
             <!-- Email input -->
             <div class="form-outline mb-4">
@@ -20,11 +26,11 @@
               <label>Email address</label>
             </div>
   
-            <!-- Password input -->
+            
             <div class="form-outline mb-3">
-              <input type="text" name="password" [(ngModel)]="user.password"
-                placeholder="Enter password" />
-              <label>Password</label>
+              <input type="text" name="id" [(ngModel)]="user.id"
+                placeholder="" />
+              <label>Id</label>
             </div>
 
             <button (click)="loginClicked()">Login</button>

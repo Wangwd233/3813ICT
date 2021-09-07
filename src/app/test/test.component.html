@@ -1,0 +1,15 @@
+<p>test works!</p>
+<p>{{name}}</p>
+
+
+<ng-template [ngIf]="Empty" [ngIfElse]="notEmpty">
+    <div>
+        None
+    </div>
+</ng-template>
+
+<ng-template #notEmpty>
+    <p>{{obj.name}}</p>
+</ng-template>
+<button (click)="test()">test</button>
+
