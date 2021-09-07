@@ -11,12 +11,12 @@ import { LoginComponent } from '../login/login.component';
 })
 
 export class AccountComponent implements OnInit {
-
   
   constructor() { 
     
   }
 
   ngOnInit(): void {
+
   }
 }

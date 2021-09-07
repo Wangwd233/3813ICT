@@ -1,10 +1,6 @@
 
-<p>login works!</p>
 <p>user: {{user1.email}}</p>
-<p>{{name}}</p>
-<a href="/account">account</a>
-
-
+<ng-template [ngIf]="isLogin" [ngIfElse]="login">
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-9 col-lg-6 col-xl-5">
@@ -12,7 +8,6 @@
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <form>
-
             <div class="form-outline mb-3">
               <input type="text" name="user" [(ngModel)]="user.name"
                 placeholder="Enter a name" />
@@ -32,16 +27,18 @@
                 placeholder="" />
               <label>Id</label>
             </div>
-
+          
             <button (click)="loginClicked()">Login</button>
-
-            <p>{{message}}</p>
 
           </form>
         </div>
       </div>
     </div>
-    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-     
-  
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary"></div>
+  </ng-template>
+  <ng-template #login>
+      <p>login successfully!</p>
+      <p>Welcome, {{user1.name}}</p>
+      <button (click)="logoutClicked()">Logout</button>
 
+  </ng-template>

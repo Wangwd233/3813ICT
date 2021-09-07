@@ -19,7 +19,7 @@ export class TestComponent implements OnInit {
   id = 1;
   Empty = true;
 
-  constructor() { 
+  constructor(private router: Router) { 
     this.name = "";
     this.user = {name: "Tom", email: "Tom@gmail.com", id: 1, role: "user"};
     this.user1 =''
@@ -48,6 +48,9 @@ export class TestComponent implements OnInit {
     this.obj = JSON.parse(localStorage.getItem("user.test") || "{}");
     this.user1 = JSON.stringify(this.obj);
     console.log(this.obj);
+    this.router.navigate(['/test2', this.user.id]);
+    this.router.navigateByUrl('/test2');
+
     if(this.obj != {name: "", email: '', id: 5, role: ""}){
         this.Empty = false;
     };

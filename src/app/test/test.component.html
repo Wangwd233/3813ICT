@@ -2,6 +2,8 @@
 <p>{{name}}</p>
 
 
+<a [routerLink] = "[ '/users', user.id ]" > {{user.name}} Profile </a>
+
 <ng-template [ngIf]="Empty" [ngIfElse]="notEmpty">
     <div>
         None

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,11 +13,7 @@ export class LoginComponent implements OnInit {
 
   user1: {name: string, email: string, id: string, role: string};
 
-  public id = "variable works!";
-
-  user2={email:'',password:''};
-  
-  user3={email:'',password:''};
+  isLogin = true;
 
   message='';
 
@@ -27,19 +24,28 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router) {
     this.user= {name: "", email: '', id: '', role: "Normal user"};
     this.user1= {name: "", email: '', id: '', role: ""};
-    this.name = '';
+    this.name = '1';
   };
 
   ngOnInit(): void {
     //this.user ={email: '', password:''};
+    //localStorage.clear();
   };
   
   loginClicked(){
         localStorage.setItem(this.user.id, JSON.stringify(this.user));
         this.message='Login successfully';
-        this.router.navigate(['/account', this.id]);
+        //this.router.navigate(['account']);
         this.user1 = JSON.parse(localStorage.getItem(this.user.id) || "{}");
+        this.isLogin = false;
      };
+
+  logoutClicked(){
+        localStorage.removeItem(this.user1.id);
+        this.isLogin = true;
+        this.name = localStorage.getItem(this.user1.id);
+        console.log(this.name);
+  };
      
   }
   
