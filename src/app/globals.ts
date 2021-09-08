@@ -1,0 +1,1 @@
+export const base_path="http://localhost/api/index.php/home";

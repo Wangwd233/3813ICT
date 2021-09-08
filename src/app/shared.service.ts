@@ -1,6 +1,6 @@
-import { ArrayType } from '@angular/compiler';
+
 import { Injectable } from '@angular/core';
-export const base_path="http://localhost/api/index.php/home";
+import * as globals from 'src/app/globals';
 
 @Injectable()
 

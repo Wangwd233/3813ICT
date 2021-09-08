@@ -1,25 +1,35 @@
 
-<p>user: {{user1.email}}</p>
+<p>{{channelId}}</p>
+<p>{{userId}}</p>
+
 <ng-template [ngIf]="isLogin" [ngIfElse]="login">
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-9 col-lg-6 col-xl-5">
          
         </div>
+
+        
+
+        <!-- name input -->
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
           <form>
-            <div class="form-outline mb-3">
-              <input type="text" name="user" [(ngModel)]="user.name"
-                placeholder="Enter a name" />
-              <label>Username</label>
-            </div>
-  
+
             <!-- Email input -->
             <div class="form-outline mb-4">
               <input type="text" [(ngModel)]="user.email" name="email"
                 placeholder="Enter a valid email address" />
               <label>Email address</label>
             </div>
+
+            <!-- name input -->
+            <div class="form-outline mb-3">
+              <input type="text" name="user" [(ngModel)]="user.name"
+                placeholder="Enter a name" />
+              <label>Username</label>
+            </div>
+  
+            
   
             
             <div class="form-outline mb-3">
@@ -39,6 +49,13 @@
   <ng-template #login>
       <p>login successfully!</p>
       <p>Welcome, {{user1.name}}</p>
+      <p>You are in group: </p>
+      <form>
+        <p><input type="number" name="channelId" [(ngModel)]="channelId" min="1" max="3" />
+          <label>Channel</label>
+        </p>
+        <button (click)="joinChannel()">Join the channel</button>
+      </form>
       <button (click)="logoutClicked()">Logout</button>
 
   </ng-template>
