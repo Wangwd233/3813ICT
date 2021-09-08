@@ -1,3 +1,4 @@
 <p>account works!</p>
 <a href="/login">Login</a>
-<p></p>
+<p>{{userid}}</p>
+<button *ngIf="paramsub" class="btn btn-lg btn primary btn-block text-uppercase" (click)="unsub()">Unsubscribe</button>

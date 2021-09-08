@@ -6,10 +6,10 @@ import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
 
 const routes: Routes = [
-  {path:'login/:id', component: LoginComponent},
-  {path:'account', component: AccountComponent},
+  {path:'login', component: LoginComponent},
+  {path:'account/:id', component: AccountComponent},
   {path:'test', component: TestComponent},
-  {path:'test2', component: Test2Component},
+  {path:'test2/:id', component: Test2Component},
 ];
 
 @NgModule({

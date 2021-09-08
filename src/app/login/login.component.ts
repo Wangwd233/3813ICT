@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit {
   loginClicked(){
         localStorage.setItem(this.user.id, JSON.stringify(this.user));
         this.message='Login successfully';
-        //this.router.navigate(['account']);
         this.user1 = JSON.parse(localStorage.getItem(this.user.id) || "{}");
         this.isLogin = false;
+        this.router.navigate(['/account', this.user1.id]);
      };
 
   logoutClicked(){

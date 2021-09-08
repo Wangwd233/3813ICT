@@ -7,6 +7,8 @@ import { AccountComponent } from './account/account.component';
 import { FormsModule } from '@angular/forms';
 import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
+//import { AppService } from './shared.service';
+
 
 @NgModule({
   declarations: [
@@ -24,4 +26,18 @@ import { Test2Component } from './test2/test2.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  /*constructor(private appService: AppService) { }
+
+changeGV(val: string[]){
+this.appService.setGroup(val);
+
+}
+
+showGV(val: string[]){
+alert("GV: " + this.appService.getGroup(val));
+
+}*/
+
+}
+
